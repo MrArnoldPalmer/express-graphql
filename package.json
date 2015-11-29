@@ -1,0 +1,39 @@
+{
+  "name": "kanban-api",
+  "version": "1.0.0",
+  "description": "Rest API for Kanban board",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node ./index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-1",
+      "stage-0"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
+    "ecmaFeatures": {
+      "modules": true,
+      "experimentalObjectRestSpread": true
+    },
+    "rules": {
+      "semi": 2
+    }
+  },
+  "author": "Mitchell Valine, Ryan Chan",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-stage-0": "^6.1.18",
+    "babel-preset-stage-1": "^6.1.18"
+  }
+}
