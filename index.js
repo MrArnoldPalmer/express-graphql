@@ -1,8 +1,10 @@
 import app from './app';
-import debug from 'debug';
 
-app.set('port', process.env.PORT || 3000);
+const PORT = 3000;
 
-const server = app.listen(app.get('port'), () => {
-  debug.log(`Express server listening on port ${server.address().port}`);
+const server = app.listen(PORT, () => {
+  let host = server.address().address;
+  let port = server.address().port;
+
+  console.log(`GraphQL listening at http://${host}:${port}`);
 });
