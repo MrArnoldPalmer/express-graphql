@@ -8,7 +8,6 @@ kanbanapi:
     - mongo
   environment:
     - DATABASE_URL=mongodb://mongo:27017/local
-    - SECRET='testsecret'
 mongo:
   image: mongo
   ports:
