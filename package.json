@@ -37,6 +37,7 @@
     "babel-preset-stage-0": "^6.1.18",
     "babel-preset-stage-1": "^6.1.18",
     "body-parser": "^1.14.1",
+    "co": "^4.6.0",
     "express": "^4.13.3",
     "graphql": "^0.4.14",
     "mongoose": "^4.2.9",
