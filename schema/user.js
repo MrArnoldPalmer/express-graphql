@@ -1,32 +1,15 @@
-import {GraphQLObjectType, GraphQLSchema, GraphQLInt} from 'graphql';
+import mongoose from 'mongoose';
 
-let count = 0;
-
-let schema  =  new GraphQLSchema({
-  query: new GraphQLObjectType({
-    name: 'RootQueryType',
-    fields: {
-      count: {
-        type: GraphQLInt,
-        resolve: () =>  {
-          return count;
-        }
-      }
-    }
-  }),
-  mutation: new GraphQLObjectType({
-    name: 'RootMutationType',
-    fields: {
-      updateCount: {
-        type: GraphQLInt,
-        description: 'Updates the count',
-        resolve: function() {
-          count += 1;
-          return count;
-        }
-      }
-    }
-  })
+const UserSchema = new mongoose.Schema({
+  userName: {
+    type: String
+  },
+  repos: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }]
 });
 
-export default schema;
+const User = mongoose.model('User', UserSchema);
+
+export default User;
